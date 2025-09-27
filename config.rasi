@@ -1,0 +1,110 @@
+// @theme "/usr/share/rofi/themes/DarkBlue.rasi"
+// configuration {
+//   display-drun: "Apps:";
+//   display-window: "Windows:";
+//   display-filebrowser: "Files:";
+//   drun-display-format: "{icon} {name}";
+//   font: "CaskaydiaMono Nerd Font Medium 10";
+//   modi: "window,run,drun,filebrowser";
+//   show-icons: true;
+//   icon-theme: "Yaru-viridian-dark";
+// }
+configuration {
+  display-drun: "Apps:";
+  display-window: "Windows:";
+  display-filebrowser: "Files:";
+  display-power-menu: "Power:";
+  drun-display-format: "{icon} {name}";
+  font: "CaskaydiaMono Nerd Font Medium 10";
+  modi: "window,run,drun,filebrowser,power-menu:rofi-power-menu";
+  show-icons: true;
+  icon-theme: "Yaru-viridian-dark";
+}
+@theme "/dev/null"
+* {
+  bg:            #1e1e20cc;    // Slightly more opaque version of your background
+  bg-alt:        #2b2b30cc;    // A slightly lighter alt background
+  bg-selected:   #313244cc;    // Keeping the selected bg as is, more visible
+
+  fg:            #ffffff;      // Your main foreground (light text)
+  fg-alt:        #bbbbbb;      // Alternate, muted foreground
+
+  border:        0;
+  margin:        0;
+  padding:       0;
+  spacing:       0;
+}
+
+// * {
+//   bg: #1e1e2e66;
+//   bg-alt: #585b7066;
+//   bg-selected: #31324466;
+//
+//   fg: #cdd6f4;
+//   fg-alt: #7f849c;
+//
+//
+//   border: 0;
+//   margin: 0;
+//   padding: 0;
+//   spacing: 0;
+// }
+
+window {
+  width: 30%;
+  background-color: @bg;
+}
+
+element {
+  padding: 8 12;
+  background-color: transparent;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 14;
+  padding: 0 10 0 0;
+  background-color: transparent;
+}
+
+entry {
+  padding: 12;
+  background-color: @bg-alt;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+  background-color: @bg;
+}
+
+listview {
+  background-color: @bg;
+  columns: 1;
+  lines: 5;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: @bg;
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+  background-color: @bg-alt;
+  text-color: @fg;
+}
+
+/* vim: ft=sass */
